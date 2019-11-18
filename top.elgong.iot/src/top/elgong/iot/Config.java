@@ -7,7 +7,7 @@ import java.io.IOException;
  *   服务器 参数配置
  *   
  *  单例模式实现
- *      饿汉模式---非线程安全
+ *      懒汉模式---非线程安全
  * @author elgong
  *
  */
@@ -15,7 +15,7 @@ public class Config {
 	
 
 	/* 服务器连接参数*/
-	public static final String SERVICE_IP = "192.168.1.126";   // IP地址
+	public static final String SERVICE_IP = "192.168.1.118";   // IP地址
 	public static final int SERVICE_PORT = 10101;     // 端口号
 	
 	

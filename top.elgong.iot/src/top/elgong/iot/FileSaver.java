@@ -14,17 +14,17 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public class FileSaver {
 
-	
-	private ConcurrentLinkedQueue<DataFormat> dataArr = null;
+	/* 消息接收缓冲队列*/
+	private ConcurrentLinkedQueue<DataFormat> dataArrReceive = null;
 	
 	Config conf = Config.getIntance();
 	
 	/**
 	 *  构造函数
-	 * @param dataArr
+	 * @param dataArrReceive
 	 */
 	public FileSaver(ConcurrentLinkedQueue<DataFormat> dataArr) {
-		this.dataArr = dataArr;
+		this.dataArrReceive = dataArr;
 	}
 	
 	/**
@@ -40,13 +40,13 @@ public class FileSaver {
 		
 		// 遍历处理ConcurrentLinkedQueue中所有的 DataFormat数据对象
 		// 当队列非空
-		while(!this.dataArr.isEmpty()) {
+		while(!this.dataArrReceive.isEmpty()) {
 		    
 			//  sb 解析一行的数据
 			StringBuilder sb = new StringBuilder(30);
 			
 			//  拿到一个DataFormat对象
-			DataFormat datTmp = this.dataArr.poll();
+			DataFormat datTmp = this.dataArrReceive.poll();
 			
 			deviceID = datTmp.getDeviceID();
 			String time = datTmp.getUpTime();

@@ -88,6 +88,7 @@ public class TCPService {
                     if(c ==-1)
                         break;
                     receiveMsg.append((char)c);
+                    System.out.println((char)c);
                 }
                 receiveMsg.append('#');
                 
@@ -125,9 +126,7 @@ public class TCPService {
             		fs.writer();
             		System.out.println("write OK");
         		}
-
         	}
-
         }
     }
 }
